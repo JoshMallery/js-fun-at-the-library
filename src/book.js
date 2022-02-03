@@ -1,5 +1,6 @@
 function createTitle(title) {
-return `The ${title}`;
+var addThe = "The " + title;
+return addThe
 }
 
 function buildMainCharacter(name,age,pronouns) {
@@ -17,18 +18,25 @@ function saveReview(text,reviews) {
     }
 }
 
-function calculatePageCount(BookTitle) {
-  //var titleString = createTitle();
-var spacesRemoved = BookTitle.replaceAll(" ","");
-//return titleString;
-//return spacesRemoved;
-  return ((BookTitle.length) * 20);
+function calculatePageCount(bookTitle) {
+  return ((bookTitle.length) * 20);
 }
+
+function writeBook(bookTitle,bookCharacter,genre) {
+var bookObject = {
+  title: bookTitle,
+  mainCharacter: bookCharacter,
+  pageCount: calculatePageCount(bookTitle),
+  genre: genre
+}
+  return bookObject
+}
+
 module.exports = {
   createTitle,
   buildMainCharacter,
   saveReview,
   calculatePageCount,
-  // writeBook,
+  writeBook,
   // editBook
 }
