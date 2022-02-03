@@ -10,10 +10,17 @@ var character = {
   }
 return character
 }
+
+function saveReview(text,reviews) {
+    if (reviews.indexOf(text) === -1){
+      reviews.push(text);
+    }
+
+}
 module.exports = {
   createTitle,
   buildMainCharacter,
-  // saveReview,
+  saveReview,
   // calculatePageCount,
   // writeBook,
   // editBook
