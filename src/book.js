@@ -32,11 +32,16 @@ var bookObject = {
   return bookObject
 }
 
+function editBook(bookObject) {
+  bookObject.pageCount = ((bookObject.pageCount) * 0.75);
+
+}
+
 module.exports = {
   createTitle,
   buildMainCharacter,
   saveReview,
   calculatePageCount,
   writeBook,
-  // editBook
+  editBook
 }
