@@ -19,8 +19,13 @@ for (var genre in libName1.shelves){
   return libName1;
 }
 
-function checkoutBook() {
-  return''
+function checkoutBook(dLibrary, bookTitle, genre) {
+for (var genres in dLibrary.shelves){
+  if ( genres === genre){
+    dLibrary.shelves[genres].splice([genres],1)
+  }
+ }
+  return `You have now checked out ${bookTitle} from the ${dLibrary.name}`
 }
 
 module.exports = {
