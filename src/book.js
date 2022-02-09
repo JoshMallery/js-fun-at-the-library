@@ -13,7 +13,7 @@ return character
 }
 
 function saveReview(text,reviews) {
-    if (reviews.indexOf(text) === -1){
+    if (!reviews.includes(text)){
       reviews.push(text);
     }
 }
@@ -23,18 +23,17 @@ function calculatePageCount(bookTitle) {
 }
 
 function writeBook(bookTitle,bookCharacter,genre) {
-var bookObject = {
-  title: bookTitle,
-  mainCharacter: bookCharacter,
-  pageCount: calculatePageCount(bookTitle),
-  genre: genre
-}
-  return bookObject
+  var bookObject = {
+    title: bookTitle,
+    mainCharacter: bookCharacter,
+    pageCount: calculatePageCount(bookTitle),
+    genre: genre
+  }
+    return bookObject
 }
 
 function editBook(bookObject) {
   bookObject.pageCount = ((bookObject.pageCount) * 0.75);
-
 }
 
 module.exports = {
